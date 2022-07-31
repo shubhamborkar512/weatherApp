@@ -10,10 +10,10 @@ export class WeatherService {
   constructor(private http:HttpClient) { }
   
   getWeatherData(cityName:string){
-    return this.http.get(environment.baseUrl+cityName,{
+    return this.http.get(environment.firebase.baseUrl+cityName,{
       headers: new HttpHeaders()
-      .set(environment.XRapidAPIHostHeaderName,environment.XRapidAPIHostHeaderValue)
-      .set(environment.XRapidAPIKeyHeaderName,environment.XRapidAPIKeyHeaderValue),
+      .set(environment.firebase.XRapidAPIHostHeaderName,environment.firebase.XRapidAPIHostHeaderValue)
+      .set(environment.firebase.XRapidAPIKeyHeaderName,environment.firebase.XRapidAPIKeyHeaderValue),
       params: new HttpParams()
       .set('q',cityName)
       .set('units',"metric")
