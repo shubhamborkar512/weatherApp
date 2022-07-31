@@ -1,20 +1,21 @@
-<div class="'search">
-  <form #userName="ngForm" (ngSubmit)="onClickSubmit(userName.value)"> 
-    <input type="text" name="city" placeholder="enter city here" ngModel> 
-    <br/> 
-    <br/> 
-    <input type="submit" value="submit"> 
- </form>
-</div>
 <div class="container">
+  
   <div class="upper-part" style="height: 200px; width: 200px;">
-      <img src="https://res.cloudinary.com/darshanscloud/image/upload/v1659098075/pqnsmeyoatu7wrkbxgfa.jpg">
+    
+    
+      <img src="https://res.cloudinary.com/darshanscloud/image/upload/v1659098075/pqnsmeyoatu7wrkbxgfa.jpg"  >
+
       <div class="upper-data">
+        <form #userName="ngForm" (ngSubmit)="onClickSubmit(userName.value)"> 
+          <input type="text" name="city" placeholder="Enter city name" ngModel> 
+          <input type="submit" value="submit"> 
+       </form>
+       <br/>
         <div class="location">
           {{ cityName }}
         </div>
         <div class="tempreture">
-          {{ this.weatherData?.feels_like| number: '1.0-0'}} °C
+          {{ this.weatherData?.temp| number: '1.0-0'}} °C
         </div>
       </div>
   </div>
@@ -29,7 +30,7 @@
             </tr>
             <tr>
               <td><img src="https://res.cloudinary.com/darshanscloud/image/upload/v1659111598/ipac3kzu1dtomtyvilqo.png"> {{this.weatherData?.humidity}} %</td>
-              <td><img src="https://res.cloudinary.com/darshanscloud/image/upload/v1659111763/ggkfstw2p5rjf3rekedv.png"> 11 km/h</td>
+              <td><img src="https://res.cloudinary.com/darshanscloud/image/upload/v1659111763/ggkfstw2p5rjf3rekedv.png"> {{this.weatherData?.wind_speed | number: '1.0-0'}} km/h</td>
             </tr>
           </tbody>
         </table>

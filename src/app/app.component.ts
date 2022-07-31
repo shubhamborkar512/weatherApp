@@ -14,18 +14,27 @@ export class AppComponent implements OnInit{
   weatherData?: WeatherData
 
   cityName="Pune"
-  
+ 
   constructor(private weatherSevice:WeatherService){
   }
 
 
   ngOnInit(): void {
-    
+    this.weatherSevice.getWeatherData(this.cityName).subscribe(
+      (response:any)=>{
+        this.weatherData=response;
+      },
+      (error:HttpErrorResponse)=>{ 
+        alert("enter valid city")
+        
+      }
+    );
   }
 
   onClickSubmit(object:any){
     this.weatherSevice.getWeatherData(object.city).subscribe(
       (response:any)=>{
+        console.log(response)
         this.weatherData=response;
         this.cityName=object.city;
       },
