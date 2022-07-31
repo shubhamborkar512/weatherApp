@@ -53,3 +53,12 @@
     width: 20%;
     height: auto;
   }
+  .formData{
+    text-align: center;
+  }
+ input {
+    /* border-radius: px; */
+    /* text-align: center; */
+    max-width:60%;
+    height: auto;
+  }
